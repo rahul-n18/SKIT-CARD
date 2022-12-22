@@ -12,106 +12,128 @@
     <div class="container">
         <div class="heading">Advancement Card</div>
         <br>
-        <form action="#">
+        <form name="submit-to-google-sheet" >
             <div class="card-details">
                 <div class="card-box">
                     <span class="details">Full Name</span>
-                    <input type="text" placeholder="enter Name" required>
+                    <input type="text" placeholder="enter Name" name="Name" required>
                 </div>
                 <div class="card-box">
                     <span class="details">USN</span>
-                    <input type="text" placeholder="enter USN" required>
+                    <input type="text" placeholder="enter USN"  name="USN" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Department</span>
-                    <input type="text" placeholder="enter Department" required>
+                    <input type="text" placeholder="enter Department"  name="Department" required>
                 </div>
                 <div class="card-box">
                     <span class="details">CGPA</span>
-                    <input type="number" placeholder="enter CGPA" required>
+                    <input type="number" step="any" placeholder="enter CGPA"  name="CGPA" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Co-curricular Activity[paper presentation,quiz,webinar,workshops]</span>
-                    <input type="text" placeholder="enter if you have participated" required>
+                    <input type="text" placeholder="enter if you have participated"  name="Co-curricular" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Extra-curricular Activity[Sports,cultural,social]</span>
-                    <input type="text" placeholder="enter if you have participated" required>
+                    <input type="text" placeholder="enter if you have participated"  name="Extra-curricular" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Internship</span>
-                    <input type="text" placeholder="if you have worked as an Intern" required>
+                    <input type="text" placeholder="if you have worked as an Intern"  name="Internship" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Hobby Projects</span>
-                    <input type="text" placeholder="if you have worked on Hobby Projects" required>
+                    <input type="text" placeholder="if you have worked on Hobby Projects"  name="Projects" required>
                 </div>
                 <div class="card-box">
                     <span class="details">Software learnt</span>
-                    <input type="text" placeholder="if you have learnt any Software" required>
+                    <input type="text" placeholder="if you have learnt any Software"  name="Software Learnt" required>
                 </div>
               
                 <div class="circle-form">
                     <span class="circle-title">Parent Visit</span>
                     <div class="category">
-                        <input type="radio" name="option">Yes
-                        <input type="radio" name="option">No
+                        <input type="radio" name="Parent Visit" value="Yes">Yes
+                        <input type="radio" name="Parent Visit" value="No">No
                     </div>
                 </div>
                 <div class="card-box">
                     <span class="details">Competitions participated</span>
-                    <input type="text" placeholder="if you have participated" required>
+                    <input type="text" placeholder="if you have participated"  name="Competitions"  required>
                 </div>
                 <div class="card-box">
                     <span class="details">No. of programs attended [organised by the Department/College]</span>
-                    <input type="text" placeholder="enter programs" required>
+                    <input type="text" placeholder="enter programs"  name="Program attended" required>
                 </div>
                 <div class="card-box">
                     <span class="details">No. of programs attended [Outside SKIT]</span>
-                    <input type="text" placeholder="enter programs" required>
+                    <input type="text" placeholder="enter programs"  name="Outside Program attended"  required>
                 </div>
               
                 <div class="circle-form">
                     <span class="circle-title">MOOC completed</span>
                     <div class="category">
-                        <input type="radio" name="option">Yes
-                        <input type="radio" name="option">No
+                        <input type="radio" name="MOOC" value="Yes">Yes
+                        <input type="radio" name="MOOC" value="No">No
                     </div>
                 </div>
                 
                 <div class="card-box">
                     <span class="details">Member of any Club?</span>
-                    <input type="text" placeholder="enter name of club" required>
+                    <input type="text" placeholder="enter name of club"  name="Club"  required>
                 </div>
                 
                 <div class="circle-form">
                     <span class="circle-title">Visited Library?</span>
                     <div class="category">
-                        <input type="radio" name="option">Yes
-                        <input type="radio" name="option">No
+                        <input type="radio" name="Library" value="Yes">Yes
+                        <input type="radio" name="Library" value="No">No
                     </div>
                 </div>
                 <div class="card-box">
                     <span class="details">GATE/FRE/TOEFL/IELTS</span>
-                    <input type="text" placeholder="if any" required>
+                    <input type="text" placeholder="if any"  name="Exam" required>
                 </div>
                 <div class="circle-form">
                     <span class="circle-title">Any  Disciplinary Issue?</span>
                     <div class="category">
-                        <input type="radio" name="option">Yes
-                        <input type="radio" name="option">No
+                        <input type="radio" name="Issue" value="Yes">Yes
+                        <input type="radio" name="Issue" value="No">No
                     </div>
                 </div>
                 <div class="card-box">
                     <span class="details">Placements</span>
-                    <input type="text" placeholder="enter if placed" required>
+                    <input type="text" placeholder="enter if placed"  name="Placements" required>
                 </div>
                 <div class="button">
-                    <input type="Submit" value="Register" name="" id="">
+                    <input type="submit" name="submit" >
+                    <span id="success"></span>
                 </div>
             </div>
             
           </form>
+
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxCVpr6yO7vYGAJHLYIHkmcxsN2yLTGEytV-4k7rmEJUcG3WKCMsxSGDRXh8-Zt9Fu-Og/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const success = document.getElementById('success');
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    success.innerHTML="successfully submitted";
+
+                    setTimeout(function()
+                    {
+                        success.innerHTML="";
+                    },10000)
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
 
     </div>
   
