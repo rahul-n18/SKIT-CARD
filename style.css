@@ -11,10 +11,15 @@ body{
     height: auto;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgb(17, 169, 0),rgb(26, 0, 157));
+    background: linear-gradient(135deg, rgb(0, 199, 40),rgb(40, 0, 241));
     /* padding:10px; */
 }
 
+.hImage{
+    height: 100px;
+    width: 300px;
+    
+}
 .container{
     max-width: 700px;
     width: 100%;
