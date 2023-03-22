@@ -107,6 +107,21 @@ form .button input{
     background: linear-gradient(135deg,rgb(30, 182, 0),rgb(39, 0, 236));
 }
 
+ .button{
+    padding: 10px 0;
+    margin-top: 10px;
+    height: 100%;
+    width: 50%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg,rgb(30, 182, 0),rgb(39, 0, 236));
+}
+
 form .button input:hover{
     background: linear-gradient(-135deg,blue,red);
 }
