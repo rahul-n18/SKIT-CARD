@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+    <div class="container">
+        <div>
+            <img class="hImage" src="https://www.skit.org.in/assets/images/logo.png" alt="">
+            <br>
+            <button class="button1" id="signOut">Logout</button>
+        </div>
+
+        <div class="heading"> Advancement Card</div>
+        <br>
+
+        <form action="" id="skitCard">
+            <div class="card-details">
+                <div class="card-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="enter Name" id="Name" required>
+                </div>
+                <div class="card-box">
+                    <span class="details">USN</span>
+                    <input type="text" placeholder="enter USN" id="Usn" required>
+                </div>
+                <div class="card-box">
+                    <span class="details">Department</span>
+                    <input type="text" placeholder="enter Department" id="Department" required>
+                </div>
+
+                <div class="card-box">
+                    <span class="details">1.CGPA</span>
+                    <input class="card-box" type="number" step="any" placeholder="1st Year CGPA" id="CGPA1">
+                    <input class="card-box" type="number" step="any" placeholder="2nd Year CGPA" id="CGPA2">
+                    <input class="card-box" type="number" step="any" placeholder="3rd Year CGPA" id="CGPA3">
+                    <input class="card-box" type="number" step="any" placeholder="4th Year CGPA" id="CGPA4">
+                </div>
+
+                <div class="card-box">
+                    <span class="details">2.Co-curricular Activity[paper presentation,quiz,webinar,workshops]</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Co-curricular1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Co-curricular2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Co-curricular3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Co-curricular4">
+                </div>
+                <div class="card-box">
+                    <span class="details">3.Extra-curricular Activity[Sports,cultural,social]</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Extra-curricular1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Extra-curricular2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Extra-curricular3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Extra-curricular4">
+                </div>
+                <div class="card-box">
+                    <span class="details">4.Internship</span>
+                    <input class="card-box" type="text" placeholder="1st year Internship" id="Internship1">
+                    <input class="card-box" type="text" placeholder="2nd year Internship" id="Internship2">
+                    <input class="card-box" type="text" placeholder="3rd year Internship" id="Internship3">
+                    <input class="card-box" type="text" placeholder="4th year Internship" id="Internship4">
+                </div>
+                <div class="card-box">
+                    <span class="details">5.Hobby Projects</span>
+                    <input class="card-box" type="text" placeholder="1st year Project" id="Projects1">
+                    <input class="card-box" type="text" placeholder="2nd year Project" id="Projects2">
+                    <input class="card-box" type="text" placeholder="3rd year Project" id="Projects3">
+                    <input class="card-box" type="text" placeholder="4th year Project" id="Projects4">
+                </div>
+                <div class="card-box">
+                    <span class="details">6.Software learnt</span>
+                    <input class="card-box" type="text" placeholder="1st year learnt Software" id="Software-Learnt1">
+                    <input class="card-box" type="text" placeholder="2nd year learnt Software" id="Software-Learnt2">
+                    <input class="card-box" type="text" placeholder="3rd year learnt Software" id="Software-Learnt3">
+                    <input class="card-box" type="text" placeholder="4th year learnt Software" id="Software-Learnt4">
+                </div>
+
+
+
+                <div class="circle-form">
+                    <span class="circle-title">7.Parent Visit</span>
+                    <div class="category">
+                        <span>1st year</span>
+                        <input type="radio" id="Parent-Visit1" value="Yes1">Yes
+                        <input type="radio" id="Parent-Visit1" value="No1">No
+                    </div>
+                    <div class="category">
+                        <span>2nd year</span>
+                        <input type="radio" id="Parent-Visit2" value="Yes2">Yes
+                        <input type="radio" id="Parent-Visit2" value="No2">No
+                    </div>
+                    <div class="category">
+                        <span>3rd year</span>
+                        <input type="radio" id="Parent-Visit3" value="Yes3">Yes
+                        <input type="radio" id="Parent-Visit3" value="No3">No
+                    </div>
+                    <div class="category">
+                        <span>4th year</span>
+                        <input type="radio" id="Parent-Visit4" value="Yes4">Yes
+                        <input type="radio" id="Parent-Visit4" value="No4">No
+                    </div>
+                </div>
+                <div class="card-box">
+                    <span class="details">8.Competitions participated</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Competitions1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Competitions2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Competitions3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Competitions4">
+                </div>
+                <div class="card-box">
+                    <span class="details">9.No. of programs attended [organised by the
+                        Department/College]</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Program-attended1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Program-attended2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Program-attended3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Program-attended4">
+                </div>
+                <div class="card-box">
+                    <span class="details">10.No. of programs attended [Outside SKIT]</span>
+                    <input class="card-box" type="text" placeholder="1st year participation"
+                        id="Outside-Program-attended1">
+                    <input class="card-box" type="text" placeholder="2nd year participation"
+                        id="Outside-Program-attended2">
+                    <input class="card-box" type="text" placeholder="3rd year participation"
+                        id="Outside-Program-attended3">
+                    <input class="card-box" type="text" placeholder="4th year participation"
+                        id="Outside-Program-attended4">
+                </div>
+
+
+
+                <div class="circle-form">
+                    <span class="circle-title">11.MOOC completed</span>
+                    <div class="category">
+                        <span>1st year</span>
+                        <input type="radio" id="MOOC1" value="Yes1">Yes
+                        <input type="radio" id="MOOC1" value="No1">No
+                    </div>
+                    <div class="category">
+                        <span>2nd year</span>
+                        <input type="radio" id="MOOC2" value="Yes2">Yes
+                        <input type="radio" id="MOOC2" value="No2">No
+                    </div>
+                    <div class="category">
+                        <span>3rd year</span>
+                        <input type="radio" id="MOOC3" value="Yes3">Yes
+                        <input type="radio" id="MOOC3" value="No3">No
+                    </div>
+                    <div class="category">
+                        <span>4th year</span>
+                        <input type="radio" id="MOOC4" value="Yes4">Yes
+                        <input type="radio" id="MOOC4" value="No4">No
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="card-box">
+                    <span class="details">12.Member of any Club?</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Club1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Club2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Club3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Club4">
+                </div>
+
+                <div class="circle-form">
+                    <span class="circle-title">13.Visited Library?</span>
+                    <div class="category">
+                        <span>1st year</span>
+                        <input type="radio" id="Library1" value="Yes1">Yes
+                        <input type="radio" id="Library1" value="No1">No
+                    </div>
+                    <div class="category">
+                        <span>2nd year</span>
+                        <input type="radio" id="Library2" value="Yes2">Yes
+                        <input type="radio" id="Library2" value="No2">No
+                    </div>
+                    <div class="category">
+                        <span>3rd year</span>
+                        <input type="radio" id="Library3" value="Yes3">Yes
+                        <input type="radio" id="Library3" value="No3">No
+                    </div>
+                    <div class="category">
+                        <span>4th year</span>
+                        <input type="radio" id="Library4" value="Yes4">Yes
+                        <input type="radio" id="Library4" value="No4">No
+                    </div>
+                </div>
+                <br>
+                <div class="card-box">
+                    <span class="details">14.GATE/FRE/TOEFL/IELTS</span>
+                    <input class="card-box" type="text" placeholder="1st year participation" id="Exam1">
+                    <input class="card-box" type="text" placeholder="2nd year participation" id="Exam2">
+                    <input class="card-box" type="text" placeholder="3rd year participation" id="Exam3">
+                    <input class="card-box" type="text" placeholder="4th year participation" id="Exam4">
+                </div>
+                <div class="circle-form">
+                    <span class="circle-title">15.Any Disciplinary Issue?</span>
+                    <div class="category">
+                        <span>1st year</span>
+                        <input type="radio" id="Issue1" value="Yes1">Yes
+                        <input type="radio" id="Issue1" value="No1">No
+                    </div>
+                    <div class="category">
+                        <span>2nd year</span>
+                        <input type="radio" id="Issue2" value="Yes2">Yes
+                        <input type="radio" id="Issue2" value="No2">No
+                    </div>
+                    <div class="category">
+                        <span>3rd year</span>
+                        <input type="radio" id="Issue3" value="Yes3">Yes
+                        <input type="radio" id="Issue3" value="No3">No
+                    </div>
+                    <div class="category">
+                        <span>4th year</span>
+                        <input type="radio" id="Issue4" value="Yes4">Yes
+                        <input type="radio" id="Issue4" value="No4">No
+                    </div>
+                </div>
+                <br>
+                <div class="card-box">
+                    <span class="details">16.Placements</span>
+                    <input class="card-box" type="text" placeholder="1st year Placement" id="Placements1">
+                    <input class="card-box" type="text" placeholder="2nd year Placement" id="Placements2">
+                    <input class="card-box" type="text" placeholder="3rd year Placement" id="Placements3">
+                    <input class="card-box" type="text" placeholder="4th year Placement" id="Placements4">
+                </div>
+
+
+
+                <div>
+
+                    <button class="button" type="submit">Submit</button>
+                    <span id="success"></span>
+                    <script>
+                        alert("Submitted Successfully");
+                    </script>
+
+                </div>
+
+
+
+        </form>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+          </script>
+
+        <script>
+            // Initialize Firebase app
+
+
+
+            // Add click event listener to sign out button
+            const signOutBtn = document.getElementById('signOut');
+            signOutBtn.addEventListener('click', (e) => {
+                auth.signOut().then(() => {
+                    // Sign-out successful.
+                    console.log("User has been logged out.");
+                    window.location.replace("index.html");
+                }).catch((error) => {
+                    // An error happened.
+                    console.error(error);
+                });
+            });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+        <script src="./card.js"></script>
+    </div>
+
+
+</body>
+
+</html>
