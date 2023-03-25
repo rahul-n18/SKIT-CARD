@@ -1,173 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-    <div>
-        <br>
-        <center>
-            <h1 style="color: rgb(3, 197, 0);">Student Advancement Card</h1>
-        </center>
-    </div>
+  <!-- HTML code for the table -->
+<table>
+  <thead>
+    <tr>
+      <th>Details of</th>
+      <th>1 Year</th>
+      <th>2 Year</th>
+      <th>3 Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Roll No.</td>
+      <td id="rollNo1"></td>
+      <td id="rollNo2"></td>
+      <td id="rollNo3"></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td id="name1"></td>
+      <td id="name2"></td>
+      <td id="name3"></td>
+    </tr>
+    <tr>
+      <td>Branch</td>
+      <td id="branch1"></td>
+      <td id="branch2"></td>
+      <td id="branch3"></td>
+    </tr>
+    <tr>
+      <td>CGPA</td>
+      <td id="cgpa1"></td>
+      <td id="cgpa2"></td>
+      <td id="cgpa3"></td>
+    </tr>
+  </tbody>
+</table>
 
-    <div class="h5-container">
-        <h5>Name:</h5>
-        <h5>USN:</h5>
-        <h5>Department:</h5>
-    </div>
-    
-    <div class="container mt-3">
-
-
-        <style>
-            .h5-container {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .search-container {
-                display: flex;
-                flex-direction: row-reverse;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-
-            #search-input {
-                padding: 5px;
-                margin-right: 10px;
-            }
-
-            #search-button {
-                padding: 5px 10px;
-            }
-
-            .table-blue {
-                background-color: rgb(255, 255, 255);
-                border-radius: 10px;
-            }
-
-            .button-style {
-                background-color: rgb(87, 115, 255);
-                color: rgb(255, 255, 255);
-                border-radius: 30px;
-                padding: 5px 10px;
-                border: none;
-                cursor: pointer;
-
-            }
-
-            .table-border {
-                border: 2px solid black;
-                border-collapse: collapse;
-            }
-
-            .table-border th,
-            .table-border td {
-                border: 2px solid black;
-                padding: 10px;
-            }
-        </style>
-
-      
-        <br>
-        <table class="table-border">
-
-            <thead>
-
-                <th></th>
-                <th>Details of </th>
-                <th>I Year</th>
-                <th>II Year</th>
-                <th>III Year</th>
-                <th>IV Year</th>
-
-
-            </thead>
-            
-            
-                
-              
-            <tbody id="tbody1">
-
-            </tbody>
-        </table>
-
-    </div>
+<!-- JavaScript code to populate the table from Firebase Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+<script type="module">
 
 
 
-    <script type="module">
-        var stdNo = 0;
-    var view = 'View';
-    var tbody = document.getElementById('tbody1');
-  
-function AddItemsToTable(name, usn, department) {
- 
-      
-      var trow = document.createElement("tr");
-      var td1 = document.createElement('td');
-      var td2 = document.createElement('td');
-      var td3 = document.createElement('td');
-
-
-      
-      var td4 = document.createElement('td');
-      var td5 = document.createElement('td');
-      var button = document.createElement('button');
-
-      td1.innerHTML = ++stdNo;
-      td2.innerHTML = name;
-      td3.innerHTML = usn;
-      td4.innerHTML = department;
-      
-      button.textContent = 'View Details';
-      
-      button.classList.add("button-style");
-
-// Add event listener to button
-button.addEventListener("click", function () {
-  var usn = this.parentNode.previousSibling.innerHTML;
-  var FullDetail = usn;
-  window.location.href = "fullDetails.html";
-});
-
-      trow.appendChild(td1);
-      trow.appendChild(td2);
-      trow.appendChild(td3);
-      trow.appendChild(td4);
-      td5.appendChild(button);
-      trow.appendChild(td5);
-
-      tbody.appendChild(trow);
-    }
-
-
-
-    function AddAllItemsToTable(TheStudent){
-      stdNo=0;
-      tbody.innerHTML="";
-     
-      TheStudent.forEach(element => {
-        AddItemsToTable(element.Name, element.Usn, element.Department);
-        
-      });
-    
-    }
-
-  
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-    
-      const firebaseConfig = {
+  // Firebase configuration
+  const firebaseConfig = {
         apiKey: "AIzaSyDbJWkfiWPQukgaqjntxPWsOPJvcLZ2zzI",
         authDomain: "skit-student-card.firebaseapp.com",
         databaseURL: "https://skit-student-card-default-rtdb.firebaseio.com",
@@ -178,57 +64,37 @@ button.addEventListener("click", function () {
         measurementId: "G-9E3XTC47M6"
       };
 
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-      import { getDatabase, ref, child, onValue, get }
-      from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
-     
-      const db = getDatabase();
+  // Get a reference to the database service
+  const db = firebase.database();
 
+  // Get a reference to the "Demo/1" collection in the database
+  const dbRef1 = ref(db, 'Demo/1');
 
+  // Attach a listener to the "value" event to read the data from the database
+  onValue(dbRef1, (snapshot) => {
+    // Get the data from the snapshot
+    const data = snapshot.val();
 
+    // Populate the table with the data
+    document.getElementById('rollNo1').textContent = data.Roll_No_1;
+    document.getElementById('name1').textContent = data.Name_1;
+    document.getElementById('branch1').textContent = data.Branch_1;
+    document.getElementById('cgpa1').textContent = data.CGPA_1;
 
-    function GetAllDataOnce(){
-      const dbRef= ref(db);
-      
-      get(child(dbRef, "skitCard"))
-      .then((snapshot)=>{
+    document.getElementById('rollNo2').textContent = data.Roll_No_2;
+    document.getElementById('name2').textContent = data.Name_2;
+    document.getElementById('branch2').textContent = data.Branch_2;
+    document.getElementById('cgpa2').textContent = data.CGPA_2;
 
-        var students = [];
-
-        snapshot.forEach(childSnapshot => {
-          students.push(childSnapshot.val());
-        });
-
-        AddAllItemsToTable(students);
-      });
-      
-    }
-
-    function GetAllDataRealtime(){
-      const dbRef= ref(db,"demo");
-      
-      onValue(dbRef, (snapshot)=>{
-        var students = [];
-
-      snapshot.forEach(childSnapshot => {
-        students.push(childSnapshot.val());
-      });
-
-        AddAllItemsToTable(students);
-      })
-      
-    }
-
-    window.onload = GetAllDataRealtime;
-
-    
-
+    document.getElementById('rollNo3').textContent = data.Roll_No_3;
+    document.getElementById('name3').textContent = data.Name_3;
+    document.getElementById('branch3').textContent = data.Branch_3;
+    document.getElementById('cgpa3').textContent = data.CGPA_3;
+  });
 </script>
 
-
-
 </body>
-
 </html>
