@@ -17,6 +17,7 @@ var skitCardDB = firebase.database().ref("skitCard");
 
 document.getElementById("skitCard").addEventListener("submit", submitCard);
 
+
 function submitCard(e) {
     e.preventDefault();
 
